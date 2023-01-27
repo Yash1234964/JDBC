@@ -1,18 +1,17 @@
 package JdbcPractise;
+
 import java.sql.Connection;
-import java.sql.*;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Properties;
+import java.sql.Statement;
 
-import com.mysql.cj.protocol.Resultset;
-public class Test1 {
+public class InsertionPractise {
 
-	
-
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+
 		Connection connection=null;
 		Statement statement=null;
 		ResultSet resultset=null;
@@ -31,24 +30,21 @@ public class Test1 {
 			
 			System.out.println("The implement class name  "+connection.getClass().getTypeName());
 			
-		    String sqlSelectQuery ="select sid,sname,sage,saddress from student";
+//		    String sqlSelectQuery ="select sid,sname,sage,saddress from student";
 		    
 		    
 			 statement= connection.createStatement();
-			resultset = statement.executeQuery(sqlSelectQuery);
+//			resultset = statement.executeQuery(sqlSelectQuery);
+			
+			String sqlInsertionQuery="insert into student (sname,sage,saddress) values('hardik',32,'GT')";
+			int rowAffected=statement.executeUpdate(sqlInsertionQuery);
+			System.out.println("No of rows affected  "+rowAffected);
+			
+//			System.out.println("The implement class name  "+statement.getClass().getTypeName());
+//			System.out.println("The implement class name  "+resultset.getClass().getTypeName());
 			
 			
-			System.out.println("The implement class name  "+statement.getClass().getTypeName());
-			System.out.println("The implement class name  "+resultset.getClass().getTypeName());
 			
-			while(resultset.next()) {
-				Integer sid=resultset.getInt(1);
-				String sname=resultset.getString(2);
-				Integer sage=resultset.getInt(3);
-				String saddress=resultset.getString(4);
-				System.out.println(sid+" "+sname+" "+sage+" "+saddress );
-				
-			}
 		}
 //		catch(ClassNotFoundException ce) {
 //			ce.printStackTrace();
