@@ -22,8 +22,7 @@ public class InsertionPractise {
 			
 			String url = "jdbc:mysql://localhost:3306/practise1";
 			
-			String username="root";
-			String password="yashr8143";
+			String username="root";";
 			
 			
 			connection = DriverManager.getConnection(url,username,password);
