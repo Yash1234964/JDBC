@@ -20,12 +20,13 @@ public class InsertionPractise {
 			
 			System.out.println("Driver loaded Successfully");
 			
-			String url = "jdbc:mysql://localhost:3306/practise1";
-			
-			String username="root";";
-			
-			
-			connection = DriverManager.getConnection(url,username,password);
+//			String url = "jdbc:mysql://localhost:3306/practise1";
+//			
+//			String username="root";
+//			String password="yashr8143";
+//			
+			PropertiesPractise pp=new PropertiesPractise();
+			connection = pp.JDBCconnectionutil();
 			
 			System.out.println("The implement class name  "+connection.getClass().getTypeName());
 			
@@ -35,7 +36,7 @@ public class InsertionPractise {
 			 statement= connection.createStatement();
 //			resultset = statement.executeQuery(sqlSelectQuery);
 			
-			String sqlInsertionQuery="insert into student (sname,sage,saddress) values('hardik',32,'GT')";
+			String sqlInsertionQuery="insert into student (sname,sage,saddress) values('Ishan',24,'MI')";
 			int rowAffected=statement.executeUpdate(sqlInsertionQuery);
 			System.out.println("No of rows affected  "+rowAffected);
 			

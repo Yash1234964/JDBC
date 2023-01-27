@@ -22,7 +22,7 @@ public class UpdationPractise {
 			String url = "jdbc:mysql://localhost:3306/practise1";
 			
 			String username="root";
-			String password="";
+			String password="yashr8143";
 			
 			
 			connection = DriverManager.getConnection(url,username,password);
